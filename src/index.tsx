@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { GlobalStyles, theme } from './styles';
 import reportWebVitals from './reportWebVitals';
+import { ThemeProvider } from 'styled-components'
+import { Content, Title, Card} from './components'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <ThemeProvider theme = {theme}>
+    <GlobalStyles />
+    <Content data-cy="content">
+      <Title data-cy="title">Sudoku</Title>
+      <Card data-cy="card">So loved
+      really loved</Card>
+    </Content>
+  </ThemeProvider>,
   document.getElementById('root')
 );
 
